@@ -1,3 +1,7 @@
 <?php
 
-echo 'Essa é a view minha.php que é renderizada pelo método minha() que está no controller Teste.';
+echo $titulo.'<br>';
+
+foreach ($cores as $cor) {
+    echo $cor->nome.'<br>';
+}

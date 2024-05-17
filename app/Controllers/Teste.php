@@ -18,6 +18,13 @@ class Teste extends BaseController
 
     public function minha(){
 
-        return view ('minha');
+        $corModel = new \App\Models\CorModel();
+
+        $data = [
+            'titulo' => 'Array de cores',
+            'cores' => $corModel->findAll(), // findAll() é um método do Query Builder, que retorna todos os registros da tabela
+        ];
+
+        return view ('minha', $data);
     }
 }
