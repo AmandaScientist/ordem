@@ -46,4 +46,21 @@
 <!-- Aqui enviamos para o template principal os scripts -->
 <script src="https://cdn.datatables.net/v/bs4/dt-2.0.7/r-3.0.2/datatables.min.js"></script>
 
+<script>
+  $(document).ready(function() {
+    $('#ajaxTable').DataTable({
+    "ajax": "<?php echo site_url('usuarios/recuperausuarios'); ?>",
+    columns: [
+        { "data": "imagem"},
+        { "data": "nome"},
+        { "data": "email"},
+        { "data": "ativo"},
+    ]
+  });
+});
+
+
+  </script>
+
+
 <?php echo $this->endSection() ?>
